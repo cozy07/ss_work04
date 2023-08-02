@@ -3,18 +3,25 @@ name: Run tests
 on:
   push:
     branches:
-      - master 
-      
+      - master
+
 jobs:
   test:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Check current directory
+        run: pwd
+
+      - name: List files in current directory
+        run: ls -la
+
+      - name: Set script permissions
+        run: chmod +x ./test_gcd.sh
+
       - name: Run test script
-      - run: pwd
-      - run: ll
-      - run: chmod +x ../../test_gcd.sh
-      - run: bash ../../test_gcd.sh
+        run: bash ./test_gcd.sh
+
