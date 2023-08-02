@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#test
 # 例外 スクリプトに正確に2つの引数が必要
 if [[ $# -ne 2 ]]; then
     echo "Error: Two arguments are required."
